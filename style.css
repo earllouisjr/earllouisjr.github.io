@@ -114,3 +114,23 @@ a {
   display: flex;
   gap: 10px;
 }
+
+.icon-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background-color: #f2f2f2;
+  transition: background-color 0.2s ease;
+}
+
+.icon-button:hover {
+  background-color: #e0e0e0;
+}
+
+.icon-button img {
+  width: 20px;
+  height: 20px;
+}
