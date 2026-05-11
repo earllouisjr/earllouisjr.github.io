@@ -129,7 +129,6 @@ a {
 
 /* HERO */
 .hero {
-  display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 60px;
