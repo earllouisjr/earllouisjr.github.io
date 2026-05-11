@@ -1,39 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Earl Louis Jr | Engineering Portfolio</title>
-
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Earl Louis Jr | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="projects/index.html">Projects</a>
+  <!-- NAV BAR -->
+  <header>
+    <nav class="navbar">
+      <a href="index.html">Home</a>
+      <a href="projects/index.html">Projects</a>
+      <a href="resume.html">Resume</a>
+      <a href="contact.html">Contact</a>
     </nav>
+  </header>
 
-    <div class="container">
+  <!-- HERO SECTION -->
+  <section class="hero">
 
-        <h1>Earl Louis Jr</h1>
+    <!-- LEFT SIDE -->
+    <div class="hero-left">
+      <h1>Earl Louis Jr</h1>
+      <h2>Robotics Engineering Student</h2>
+      <p>
+        Robotics engineering student focused on embedded systems, automation,
+        and intelligent machine design.
+      </p>
+    </div>
 
-        <p>
-            Robotics Engineering student focused on embedded systems,
-            automation, and autonomous systems.
-        </p>
+    <!-- RIGHT SIDE -->
+    <div class="hero-right">
+      <img src="assets/headshot.jpg" alt="Headshot of Earl Louis Jr" />
 
-        <p>
-            I design and build hardware and software systems across robotics,
-            signal processing, and industrial applications.
-        </p>
+      <div class="hero-buttons">
+        <a href="https://github.com/" target="_blank">GitHub</a>
+        <a href="https://linkedin.com/" target="_blank">LinkedIn</a>
+      </div>
+    </div>
 
-        <a href="projects/index.html">
-            View Projects →
-        </a>
+  </section>
+
+  <!-- FEATURED PROJECTS -->
+  <section class="featured-projects">
+    <h2>Featured Projects</h2>
+
+    <div class="project-grid">
+
+      <div class="project-card">
+        <h3>Drone Health Monitoring</h3>
+        <p>Real-time sensor monitoring system for UAV diagnostics.</p>
+        <a href="projects/drone-health.html">View Project</a>
+      </div>
+
+      <div class="project-card">
+        <h3>Wavefront Path Planning Robot</h3>
+        <p>Grid-based navigation algorithm for autonomous movement.</p>
+        <a href="projects/wavefront-robot.html">View Project</a>
+      </div>
+
+      <div class="project-card">
+        <h3>Sound Intensity Visualizer</h3>
+        <p>Visual mapping of audio intensity using signal processing.</p>
+        <a href="projects/sound-visualizer.html">View Project</a>
+      </div>
 
     </div>
+  </section>
+
+  <!-- QUICK LINKS -->
+  <section class="quick-links">
+    <a href="projects/index.html">View All Projects</a>
+    <a href="resume.pdf">Download Resume</a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>Email: earllouisjr1118@gmail.com</p>
+    <p>
+      <a href="https://github.com/earllouisjr">GitHub</a> |
+      <a href="https://www.linkedin.com/in/earl-louis-him/">LinkedIn</a>
+    </p>
+  </footer>
 
 </body>
 </html>
