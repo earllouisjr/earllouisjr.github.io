@@ -83,3 +83,34 @@ p {
 a {
     color: #66aaff;
 }
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  padding: 80px 60px;
+}
+
+.hero-left {
+  flex: 1;
+}
+
+.hero-right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.hero-right img {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 10px;
+}
