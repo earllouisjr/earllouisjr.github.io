@@ -207,7 +207,7 @@
     <a class="back-link" href="index.html">← All Projects</a>
  
     <h1>UAV Health Monitoring System</h1>
-    <p style="color:#888; margin-top:0; margin-bottom:0; font-size:15px;">Senior Design — ECE Team 2608 &nbsp;·&nbsp; Sponsored by Belcan Engineering &nbsp;·&nbsp; UConn, 2025–2026</p>
+    <p style="color:#888; margin-top:0; margin-bottom:0; font-size:15px;">Senior Design ECE Team 2608 &nbsp;·&nbsp; Sponsored by Belcan Engineering &nbsp;·&nbsp; UConn, 2025–2026</p>
  
     <div class="project-meta">
       <span class="meta-tag">Raspberry Pi 5</span>
@@ -225,7 +225,7 @@
       <p>
         This was my senior design project, completed over two semesters as part of a multidisciplinary team
         sponsored by Belcan Engineering. We built a real-time health monitoring and diagnostics system for
-        Belcan's quadcopter UAV platform — a modular add-on that collects vibration, current, and temperature
+        Belcan's quadcopter UAV platform, a modular add-on that collects vibration, current, and temperature
         data onboard and streams it wirelessly to a ground station dashboard.
       </p>
       <p>
@@ -235,8 +235,23 @@
       </p>
  
       <div class="role-note">
-        <strong>My role:</strong> I was responsible for all onboard ECE work — sensor selection, wiring, soldering, Raspberry Pi configuration, the full multithreaded Python data acquisition application, the health-scoring algorithm, and the RF telemetry pipeline. The ground station dashboard was developed by the collaborating CSE and DMD teams.
+        <strong>My role:</strong> I was responsible for all onboard ECE work which included sensor selection, wiring, soldering, Raspberry Pi configuration, the full multithreaded Python data acquisition application, the health-scoring algorithm, and the RF telemetry pipeline. The ground station dashboard was developed by the collaborating CSE and DMD teams, and the equipment mounts were developed by collaborating ME and MDE teams.
       </div>
+    </section>
+ 
+    <!-- DEMO VIDEO -->
+    <section>
+      <h2>Demo</h2>
+      <p>
+        Paper-obstruction fault test on the bench. A small piece of paper is briefly held against
+        a motor's propeller to simulate a debris strike. The health-scoring algorithm localizes the
+        fault to the affect motor within seconds: its score drops from above 90 % to roughly 25 % 
+        while the other three motors remain healthy.
+      </p>
+      <video controls preload="metadata" poster="../assets/projects/drone-health/demo-poster.jpg" style="width:100%; border-radius:10px; background:#000; margin-top:8px;">
+        <source src="../assets/projects/drone-health/demo.mp4" type="video/mp4">
+        Your browser does not support embedded video.
+      </video>
     </section>
  
     <!-- PROBLEM STATEMENT -->
@@ -244,7 +259,7 @@
       <h2>Problem Statement</h2>
       <p>
         UAV components like motors and batteries often show early signs of failure through vibration changes,
-        rising temperatures, or abnormal current draw — but standard flight telemetry doesn't capture any of this.
+        rising temperatures, or abnormal current draw, but standard flight telemetry doesn't always capture this.
         Without visibility into these signals, operators can't detect faults in real time, and troubleshooting
         after an incident is slow and reactive.
       </p>
@@ -263,7 +278,7 @@
       </p>
       <ul>
         <li><strong>Accelerometer thread:</strong> reads 4 ADXL355 accelerometers (one per motor arm) over SPI at ~987 Hz, maintaining 1024-sample circular buffers for FFT analysis</li>
-        <li><strong>Flight controller thread:</strong> polls the SpeedyBee F405 over UART using the MultiWii Serial Protocol (MSP) at ~100 Hz for per-motor RPM and battery voltage</li>
+        <li><strong>Flight controller thread:</strong> polls the SpeedyBee F405 Flight Contorller over UART using the MultiWii Serial Protocol (MSP) at ~100 Hz for per-motor RPM and battery voltage</li>
         <li><strong>Current thread:</strong> reads 4 ACS758 Hall-effect current sensors through an ADS1115 16-bit ADC over I2C at ~2 Hz with 50-sample averaging per channel</li>
         <li><strong>Temperature thread:</strong> reads 2 TMP117 digital sensors (main and auxiliary battery) over I2C at 1 Hz</li>
         <li><strong>Health thread:</strong> fires every 512 new accelerometer samples (~0.52 s), computes per-motor FFT features and health scores</li>
@@ -279,7 +294,22 @@
         <span>assets/projects/drone-health/block-diagram.png</span>
       </div>
     </section>
- 
+
+    <!-- DESIGN CHANGES -->
+    <section>
+      <h2>Design Changes During Integration</h2>
+      <p>
+        Three significant changes to the original first-semester design happened during second-semester integration.
+        These weren't course corrections from a failed plan, they were real-world adjustments based on what we
+        encountered when we actually started building.
+      </p>
+      <ul>
+        <li><strong>Motor thermocouples → battery temperature sensors.</strong> The original plan called for K-type thermocouples mounted on each motor housing. The collaborating ME team couldn't find a reliable way to mount them on the motors given the frame geometry and clearance constraints. Rather than force a fragile solution, we redirected the temperature channels to the propulsion and auxiliary batteries using TMP117 digital sensors. Bench testing later validated this was actually the higher-value location as the propulsion battery turned out to be the dominant thermal hazard.</li>
+        <li><strong>MCP3208 ADC → ADS1115.</strong> The original design used an SPI-based MCP3208 for current digitization. We switched to the I²C-based ADS1115 to reduce SPI bus contention (already loaded with four accelerometers) and to gain 16-bit resolution. The trade-off was a lower sample rate, which we accepted because the diagnostic value of the current channel is in per-motor <em>average</em> draw and inter-motor deviation, not transient commutation ripple. That information is more readily extracted from the accelerometer signal.</li>
+        <li><strong>Blade-pass frequency monitoring → full RPM-conditioned health scoring.</strong> The first-semester analysis only specified BPF tracking as the vibration feature. During second-semester implementation, I expanded the pipeline into a full RPM-conditioned baseline with per-motor 1× and 2× harmonic features, bounded z-scores, exponential smoothing, and a persistence-based fault confirmation step. This was driven by the realization that single-feature threshold alarms would false-alarm constantly under varying throttle.</li>
+      </ul>
+    </section>
+    
     <!-- IMPLEMENTATION DETAILS -->
     <section>
       <h2>Implementation Details</h2>
@@ -288,7 +318,7 @@
       <p>
         Each accelerometer runs at ~987 Hz, satisfying the Nyquist requirement derived from the motor's
         blade-pass frequency (~543 Hz at full throttle). For every completed 1024-sample FFT window with 50%
-        overlap, the health thread extracts per-axis RMS, the 1x rotational harmonic, and the 2x harmonic —
+        overlap, the health thread extracts per-axis RMS, the 1x rotational harmonic, and the 2x blade-pass harmonic, along
         with the FFT target frequency computed from live RPM telemetry so it tracks motor speed in real time.
       </p>
  
@@ -311,7 +341,7 @@
       <p>
         Rather than monitoring absolute temperature alone, I implemented a current-driven thermal model
         that computes expected dT/dt based on current draw and compares it to actual temperature rise.
-        This flags abnormally fast heating before absolute temperature thresholds are approached — providing
+        This flags abnormally fast heating before absolute temperature thresholds are approached, providing
         earlier warning when the battery is being stressed.
       </p>
  
@@ -336,18 +366,18 @@
       <div class="stat-grid">
         <div class="stat-card">
           <div class="stat-value">~987 Hz</div>
-          <div class="stat-label">Vibration sample rate (exceeds 1 kHz Nyquist target)</div>
+          <div class="stat-label">Vibration sample rate (satisfies 1 kHz Nyquist target)</div>
         </div>
         <div class="stat-card">
-          <div class="stat-value">~1 Hz</div>
-          <div class="stat-label">1x harmonic tracking accuracy vs RPM-derived frequency</div>
+          <div class="stat-value">&lt;0.5 Hz</div>
+          <div class="stat-label">1× harmonic tracking error vs RPM-derived frequency</div>
         </div>
         <div class="stat-card">
           <div class="stat-value">~3 mA</div>
           <div class="stat-label">Per-motor current resolution (requirement: 100 mA)</div>
         </div>
         <div class="stat-card">
-          <div class="stat-value">&lt;1 s</div>
+          <div class="stat-value">&lt;~30 ms</div>
           <div class="stat-label">End-to-end sensor-to-dashboard latency</div>
         </div>
         <div class="stat-card">
@@ -362,22 +392,31 @@
  
       <p>
         The key validation test was a paper-obstruction fault: with all four motors running normally,
-        a small piece of paper was briefly held against motor 2's propeller to simulate a debris strike.
-        Motor 2's health score dropped from above 90% to approximately 25% within a few seconds.
-        The persistence counter triggered after 3 consecutive fault windows, transitioning motor 2 to
-        "confirmed fault" and correctly identifying it as the primary fault candidate. Motor 3 showed a
-        milder dip and was labelled a structural neighbor — consistent with vibration coupling through
-        the airframe. Motors 1 and 4 were unaffected.
+        a small piece of paper was briefly held against motor propellers to simulate a debris strike.
+        Motor health scores dropped from above 90% to approximately 25% within a few seconds.
+        The persistence counter triggered after 3 consecutive fault windows, transitioning the affected motor 
+        to "confirmed fault" and correctly identifying it as the primary fault candidate. Structurally connected
+        motors showed a milder dip and were labelled a structural neighbor, consistent with vibration coupling through
+        the airframe. The motors on the opposite side of the drone were unaffected.
       </p>
  
       <div class="highlight-box">
-        <p>The system correctly localized a transient fault to the affected motor within seconds, with no false positives on the three healthy motors — end to end, from raw sensor data through FFT, z-scoring, persistence, and status assignment.</p>
+        <p>The system correctly localized a transient fault to the affected motor within seconds, with no false positives on the three healthy motors, from raw sensor data through FFT, z-scoring, persistence, and status assignment.</p>
       </div>
  
       <div class="media-placeholder">
         [ Motor health scores during paper-obstruction fault — Figure 4.5.1 from report ]
         <span>assets/projects/drone-health/fault-detection.png</span>
       </div>
+ 
+      <div class="media-placeholder">
+        [ Terminal output during paper-obstruction fault — Figure 4.5.2 from report ]
+        <span>assets/projects/drone-health/terminal-output.png</span>
+      </div>
+      <p style="font-size:14px; color:#888; margin-top:-6px;">
+        Live terminal output showing the z-scores, motor status labels, and fault flags
+        the moment motor 2 transitioned to "confirmed fault."
+      </p>
  
       <div class="media-row">
         <div class="media-placeholder">
@@ -437,11 +476,11 @@
     <section>
       <h2>What I Learned</h2>
       <ul>
-        <li>How to design a multithreaded embedded application where threads share state safely under real timing constraints — getting the locking right between the accelerometer, health, and radio threads was one of the harder software problems.</li>
+        <li>How to design a multithreaded embedded application where threads share state safely under real timing constraints; getting the locking right between the accelerometer, health, and radio threads was one of the harder software problems.</li>
         <li>How FFT-based vibration analysis actually works in practice: deriving sampling requirements from motor physics, choosing window sizes and overlap, and building an RPM-conditioned baseline so features don't false-alarm when throttle changes.</li>
-        <li>The difference between a threshold-based alarm and a statistically grounded anomaly score — and why the latter is far more useful when operating conditions vary.</li>
+        <li>The difference between a threshold-based alarm and a statistically grounded anomaly score, and why the latter is far more useful when operating conditions vary.</li>
         <li>How to work across a multidisciplinary team where your subsystem has hard interfaces with three other teams. Changes on one side (a new mount, a different ADC) required careful re-negotiation of what each team was responsible for.</li>
-        <li>How to adapt a design mid-project when integration reveals something unexpected — and how to document those decisions clearly enough that they hold up in a sponsor review.</li>
+        <li>When to adapt and when to push back: the thermocouple-to-battery-sensor pivot came from a mechanical constraint, not a design failure, but it changed the whole thermal strategy. Learning to recognize "this isn't going to work" early and re-scope quickly saved us weeks compared to fighting the original plan.</li>
       </ul>
     </section>
  
