@@ -128,6 +128,21 @@
       color: #66aaff;
       background-color: #0d1f33;
     }
+
+    .project-figure {
+      width: 100%;
+      border-radius: 10px;
+      display: block;
+      margin-bottom: 16px;
+    }
+ 
+    .figure-caption {
+      font-size: 12px;
+      color: #777;
+      text-align: center;
+      margin-top: -8px;
+      margin-bottom: 20px;
+    }
  
     .media-placeholder {
       background-color: #141414;
@@ -289,10 +304,8 @@
         interferes with flight controller operation.
       </p>
  
-      <div class="media-placeholder">
-        [ Block diagram — Figure 3.1.1 from report ]
-        <span>assets/projects/drone-health/block-diagram.png</span>
-      </div>
+      <img class="project-figure" src="../assets/projects/drone-health/block-diagram.png" alt="System block diagram showing sensors, Raspberry Pi, radio link, and dashboard" />
+      <p class="figure-caption">Simplified System block diagram</p>
     </section>
 
     <!-- DESIGN CHANGES -->
@@ -353,10 +366,8 @@
         ground station can demultiplex the streams. All data is also logged locally to CSV on the Pi.
       </p>
  
-      <div class="media-placeholder">
-        [ Onboard data flow chart — Figure 3.6.1 from report ]
-        <span>assets/projects/drone-health/dataflow.png</span>
-      </div>
+      <img class="project-figure" src="../assets/projects/drone-health/dataflow.png" alt="Onboard data flow chart showing thread architecture" />
+      <p class="figure-caption">Onboard data flow chart</p>
     </section>
  
     <!-- RESULTS -->
@@ -404,35 +415,17 @@
         <p>The system correctly localized a transient fault to the affected motor within seconds, with no false positives on the three healthy motors, from raw sensor data through FFT, z-scoring, persistence, and status assignment.</p>
       </div>
  
-      <div class="media-placeholder">
-        [ Motor health scores during paper-obstruction fault — Figure 4.5.1 from report ]
-        <span>assets/projects/drone-health/fault-detection.png</span>
-      </div>
- 
-      <div class="media-placeholder">
-        [ Terminal output during paper-obstruction fault — Figure 4.5.2 from report ]
-        <span>assets/projects/drone-health/terminal-output.png</span>
-      </div>
-      <p style="font-size:14px; color:#888; margin-top:-6px;">
-        Live terminal output showing the z-scores, motor status labels, and fault flags
-        the moment motor 2 transitioned to "confirmed fault."
-      </p>
+      <img class="project-figure" src="../assets/projects/drone-health/terminal-output.png" alt="Live terminal output showing z-scores and motor status the moment motor 2 transitioned to confirmed fault" />
+      <p class="figure-caption">Live terminal output: z-scores, motor status labels, and fault flags the moment motor 2 transitioned to "confirmed fault"</p>
  
       <div class="media-row">
-        <div class="media-placeholder">
-          [ Vibration RMS: good vs chipped props — Figure 4.2.1 ]
-          <span>assets/projects/drone-health/rms-chipped.png</span>
-        </div>
-        <div class="media-placeholder">
-          [ Battery temperature vs time — Figure 4.4.1 ]
-          <span>assets/projects/drone-health/battery-temp.jpg</span>
-        </div>
+        <img class="project-figure" src="../assets/projects/drone-health/rms-chipped.png" alt="Vibration RMS comparison good vs chipped propellers" />
+        <img class="project-figure" src="../assets/projects/drone-health/battery-temp.jpg" alt="Battery temperature vs time during high-throttle run" />
       </div>
-
-      <div class="media-placeholder">
-        [ Per-motor current vs Motor RPM (Top: Good Props, Bottom: Taped Props) — Figure 4.3.1 ]
-        <span>assets/projects/drone-health/current-vs-rpm.png</span>
-      </div>
+      <p class="figure-caption">Vibration RMS: good vs chipped props &nbsp;|&nbsp; Battery temperature: good vs chipped props</p>
+ 
+      <img class="project-figure" src="../assets/projects/drone-health/current-vs-rpm.png" alt="Per-motor current vs RPM, good props on top, taped props on bottom" />
+      <p class="figure-caption">Per-motor current vs Motor RPM (Top: Good Props, Bottom: Taped Props)</p>
     </section>
  
     <!-- PHOTOS -->
@@ -441,19 +434,13 @@
       <p>The sensor stack, wiring, and mounting were designed and assembled by the ECE and ME/MDE teams. I was responsible for all electrical integration: soldering the sensor connections, routing wiring to the Pi, and verifying signal integrity on each communication bus.</p>
  
       <div class="media-row">
-        <div class="media-placeholder">
-          [ Top view — accelerometer mounts & current sensor positions ]
-          <span>assets/projects/drone-health/top.png</span>
-        </div>
-        <div class="media-placeholder">
-          [ Bottom view — Pi, ADC, auxiliary battery mount ]
-          <span>assets/projects/drone-health/bottom.png</span>
-        </div>
+        <img class="project-figure" src="../assets/projects/drone-health/top.png" alt="Top view of drone showing accelerometer mounts and current sensor positions" />
+        <img class="project-figure" src="../assets/projects/drone-health/bottom.png" alt="Bottom view of drone showing Raspberry Pi, ADC, and auxiliary battery mount" />
       </div>
-      <div class="media-placeholder">
-        [ Side view — RFD900x radio modem with antenna ]
-        <span>assets/projects/drone-health/side.png</span>
-      </div>
+      <p class="figure-caption">Top: accelerometer mounts &amp; current sensor positions &nbsp;|&nbsp; Bottom: Pi, ADC, auxiliary battery mount</p>
+ 
+      <img class="project-figure" src="../assets/projects/drone-health/side.png" alt="Side view of drone showing RFD900x radio modem with antenna" />
+      <p class="figure-caption">Side view - RFD900x radio modem with antenna</p>
     </section>
  
     <!-- TECHNOLOGIES -->
