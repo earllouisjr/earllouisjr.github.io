@@ -212,7 +212,7 @@
       </p>
  
       <div class="role-note">
-        <strong>Team:</strong> I worked alongside another intern, Jack Pothier, and reported to the engineering
+        <strong>Team:</strong> I worked alongside another intern and reported to the engineering
         staff. Most projects were collaborative between the two of us with direction from staff engineers.
         Items I owned solo are called out below.
       </div>
@@ -223,20 +223,20 @@
       <h2>Project Highlights</h2>
       <ul>
         <li>
-          <strong>Multi-year circuit load analytics.</strong> Compiled five years of system load telemetry
-          from the SCADA data historian across the 4.8 kV and 13.8 kV distribution networks into structured
+          <strong>Multi-year circuit load analytics.</strong> Compiled five years of system load data
+          from the SCADA historian across the 4.8 kV and 13.8 kV distribution networks into structured
           Excel workbooks, then built filterable charts allowing engineers to compare individual circuits,
-          identify seasonal peaks, and analyze behavior across multiple circuits over arbitrary time ranges.
+          identify seasonal peaks, and analyze behavior across multiple circuits over selected time ranges.
           Detailed below.
         </li>
         <li>
           <strong>Temperature-load correlation analysis.</strong> Extended the load dataset by joining it with
-          five years of regional weather data to surface temperature-driven load patterns. The resulting
+          five years of regional weather data to identify temperature-driven load patterns. The resulting
           overlays revealed clear winter and summer peaks on specific circuits and gave engineers a basis for
           predicting circuit behavior under forecasted weather. Detailed below.
         </li>
         <li>
-          <strong>Harland Place voltage-drop design study.</strong> Independently designed two alternative
+          <strong>Voltage-drop design study.</strong> Independently designed two alternative
           layouts to resolve a residential voltage-drop issue affecting a customer's EV charging, including
           primary line extensions, a second transformer addition, pole class specifications, and secondary
           run lengths. Detailed below.
@@ -261,7 +261,7 @@
           system without new equipment purchases.
         </li>
         <li>
-          <strong>Field work and witness testing.</strong> Participated in inverter interconnection witness
+          <strong>Field work and witness testing.</strong> Participated in solar inverter interconnection witness
           tests for new customer-side solar installations, transmission right-of-way pole replacement
           inspections, substation site visits, and field verification of transformer locations identified
           during the load-balancing study.
@@ -282,13 +282,13 @@
       <p>
         The largest single piece of work over the summer was building out a structured load-analysis
         dataset for NPU's medium-voltage distribution circuits. The engineering team had access to years
-        of SCADA load telemetry but no convenient way to slice it for planning decisions; pulling the
+        of SCADA load telemetry but no convenient way to slice it for planning decisions. Pulling the
         history for a single circuit required manual work each time, and comparing multiple circuits
         across multi-year windows was effectively impractical.
       </p>
  
       <p>
-        Working with Jack and under direction from the staff engineers, we pulled five years of
+        Working with the other intern and under direction from the staff engineers, we pulled five years of
         amperage trending data for every distribution breaker across both the 4.8 kV and 13.8 kV
         systems, consolidated it into two organized workbooks split by voltage class, and built
         filterable charts on top of the dataset. The result was a tool the engineering team could
@@ -307,7 +307,7 @@
       </p>
  
       <img class="project-figure" src="../assets/experience/npu/load-trend.png" alt="Single-circuit amperage trend over multiple years showing seasonal peaks" />
-      <p class="figure-caption">Single-circuit load trend across multiple years; seasonal peaks clearly visible</p>
+      <p class="figure-caption">Single-circuit load trend across multiple years with seasonal peaks clearly visible</p>
  
       <img class="project-figure" src="../assets/experience/npu/temp-correlation.png" alt="Circuit load (top) overlaid with ambient temperature (bottom) over a multi-year window" />
       <p class="figure-caption">Circuit load (top) vs. ambient temperature (bottom) over a multi-year window</p>
@@ -334,8 +334,8 @@
         I started by mapping the existing layout: a single 25 kVA transformer feeding twelve
         customers down roughly 400 ft of secondary run, with peak transformer loading around
         27 kW. The voltage drop was a consequence of the long secondary and the loading profile
-        rather than any equipment fault — adding more transformer capacity at the same location
-        wouldn't help; the issue was distance.
+        rather than any equipment fault, so adding more transformer capacity at the same location
+        wouldn't help. The issue was distance.
       </p>
  
       <h3>Two redesign options</h3>
@@ -383,7 +383,7 @@
       <h2>What I Took Away</h2>
       <ul>
         <li>
-          How a real distribution system actually fits together — breakers, reclosers, transformers,
+          How a real distribution system actually fits together: breakers, reclosers, transformers,
           voltage regulators, and the difference between what the one-line shows and what's
           actually in the field. The fault investigation in particular taught me that the documentation
           and the physical reality don't always match, and verifying that is part of the job.
@@ -392,17 +392,17 @@
           How much of practical engineering work is data work. A lot of the "engineering" decisions
           on circuit upgrades, load balancing, and planning came down to whether someone had pulled
           the right data and presented it in a way that made the answer obvious. Building those
-          datasets was a real contribution, not a side task.
+          datasets was a real contribution that influenced executive decision making.
         </li>
         <li>
-          How to scope a small design problem end-to-end (Harland Place). Identifying the actual
-          constraint (distance, not capacity), generating multiple options instead of one, and
-          presenting them so a senior engineer could compare them quickly.
+          How to scope a small design problem end-to-end (Voltage-Drop Design Study). Identifying 
+          the actual constraint (distance, not capacity), generating multiple options instead of one, 
+          and presenting them so a senior engineer could compare them quickly.
         </li>
         <li>
           How to operate in a field-and-office environment where part of the week is sitting with
           spreadsheets and part of the week is in a substation or on a pole truck. Both feed each
-          other; the field visits gave context to the data, and the data gave purpose to the field
+          other, the field visits gave context to the data, and the data gave purpose to the field
           visits.
         </li>
       </ul>
