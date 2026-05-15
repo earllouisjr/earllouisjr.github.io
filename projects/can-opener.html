@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Can-Opening Robot Arm | Earl Louis Jr</title>
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    .project-page {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 60px 32px 80px;
+    }
+ 
+    .project-page h1 {
+      font-size: 2.2rem;
+      margin-bottom: 8px;
+    }
+ 
+    .project-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 16px 0 40px;
+    }
+ 
+    .meta-tag {
+      font-size: 12px;
+      padding: 4px 12px;
+      border-radius: 100px;
+      border: 1px solid #333;
+      color: #aaa;
+      font-family: monospace;
+      letter-spacing: 0.03em;
+    }
+ 
+    .project-page section {
+      margin-bottom: 52px;
+    }
+ 
+    .project-page h2 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #f0f0f0;
+      margin-top: 0;
+      margin-bottom: 14px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #222;
+    }
+ 
+    .project-page p {
+      color: #bbb;
+      line-height: 1.75;
+      margin-bottom: 14px;
+    }
+ 
+    .project-page ul {
+      color: #bbb;
+      line-height: 1.75;
+      padding-left: 20px;
+      margin-bottom: 14px;
+    }
+ 
+    .project-page ul li {
+      margin-bottom: 6px;
+    }
+ 
+    .highlight-box {
+      background-color: #161f2e;
+      border-left: 3px solid #66aaff;
+      border-radius: 0 8px 8px 0;
+      padding: 16px 20px;
+      margin: 20px 0;
+    }
+ 
+    .highlight-box p {
+      margin: 0;
+      color: #99c4ff;
+      font-size: 15px;
+    }
+ 
+    .tech-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+    }
+ 
+    .tech-badge {
+      font-size: 12px;
+      font-family: monospace;
+      padding: 5px 12px;
+      background-color: #1a1a1a;
+      border: 1px solid #2a2a2a;
+      border-radius: 6px;
+      color: #ccc;
+    }
+ 
+    .tech-badge.primary {
+      border-color: #1e3a5f;
+      color: #66aaff;
+      background-color: #0d1f33;
+    }
+ 
+    .project-figure {
+      width: 100%;
+      border-radius: 10px;
+      display: block;
+      margin-bottom: 16px;
+    }
+ 
+    .figure-caption {
+      font-size: 12px;
+      color: #777;
+      text-align: center;
+      margin-top: -8px;
+      margin-bottom: 20px;
+    }
+ 
+    .media-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+ 
+    .role-note {
+      background-color: #1a1a1a;
+      border: 1px solid #2a2a2a;
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin-top: 16px;
+      font-size: 13px;
+      color: #888;
+    }
+ 
+    .role-note strong {
+      color: #ccc;
+    }
+ 
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #66aaff;
+      text-decoration: none;
+      font-size: 14px;
+      margin-bottom: 32px;
+    }
+ 
+    .back-link:hover {
+      text-decoration: underline;
+    }
+ 
+    @media (max-width: 600px) {
+      .media-row { grid-template-columns: 1fr; }
+      .project-page { padding: 40px 20px 60px; }
+    }
+  </style>
+</head>
+ 
+<body>
+ 
+  <header class="site-header">
+    <div class="container">
+      <nav class="navbar">
+        <a href="../index.html">Home</a>
+        <a href="index.html">Projects</a>
+        <a href="../experience/index.html">Experience</a>
+        <a href="../assets/Earl_Louis_Resume.pdf">Resume</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+ 
+  <div class="project-page">
+ 
+    <a class="back-link" href="index.html">← All Projects</a>
+ 
+    <h1>Can-Opening Robot Arm</h1>
+    <p style="color:#888; margin-top:0; margin-bottom:0; font-size:15px;">ECE 3161 Introduction to Robotics &nbsp;·&nbsp; UConn, Spring 2025</p>
+ 
+    <div class="project-meta">
+      <span class="meta-tag">4-DOF Robot Arm</span>
+      <span class="meta-tag">Servo Motion Control</span>
+      <span class="meta-tag">3D-Printed Hardware</span>
+      <span class="meta-tag">Arduino</span>
+      <span class="meta-tag">Photodiode Trigger</span>
+      <span class="meta-tag">PCA9685 PWM Driver</span>
+    </div>
+ 
+    <!-- OVERVIEW -->
+    <section>
+      <h2>Overview</h2>
+      <p>
+        A 4-DOF servo-driven robotic arm that automatically opens a soda can placed in its
+        holder. The whole machine is built around a 3D-printed structure I designed in CAD:
+        base, two arm segments, can holder, and a custom tool that hooks under the tab. A
+        photodiode in the can holder detects when a can has been placed, and the arm runs a
+        hand-tuned motion sequence that hooks the tab, lifts it, and pulls it back to crack
+        the can open.
+      </p>
+ 
+      <p>
+        It was a course project framed around assistive use cases. Opening a can is one of
+        those tasks that's easy to overlook unless you have limited grip strength, at which
+        point it can be a real daily problem. The motion sequencing problem is also a nice
+        small-scale example of how an industrial pick-and-place task gets built up: figure
+        out the physical steps required, then encode them as joint-angle setpoints with the
+        right timing between them.
+      </p>
+ 
+      <div class="role-note">
+        <strong>My role:</strong> I owned the CAD design and 3D modeling (base, arms, can
+        holder, tool), the electronics integration (Arduino + PCA9685 servo driver + photodiode),
+        the per-joint servo calibration, and all of the motion programming. Other teammates inital designs, 
+        documentation and presentation.
+      </div>
+    </section>
+ 
+    <!-- DEMO -->
+    <section>
+      <h2>Demo</h2>
+      <p>
+        Full opening sequence triggered by placing a can in the holder. The photodiode at
+        the bottom of the holder reads the drop in ambient light, the arm runs its hooking
+        and lifting motion, and the tab cracks open.
+      </p>
+      <video controls preload="metadata" poster="../assets/projects/can-opener/demo-poster.jpg" style="width:100%; border-radius:10px; background:#000; margin-top:8px;">
+        <source src="../assets/projects/can-opener/demo.mp4" type="video/mp4">
+        Your browser does not support embedded video.
+      </video>
+    </section>
+ 
+    <!-- ASSEMBLY -->
+    <section>
+      <h2>The Robot</h2>
+ 
+      <img class="project-figure" src="../assets/projects/can-opener/robot.jpg" alt="Assembled robot showing the 3D-printed base, two-segment arm, can holder, and tool" />
+      <p class="figure-caption">Assembled robot: 3D-printed base / electronics housing, two-segment arm with four servos, can holder with embedded photodiode, and the tab-hooking tool</p>
+ 
+      <p>
+        Everything mechanical was 3D-printed from CAD I designed: the two-piece base that
+        houses the Arduino and servo driver, the two arm segments, the cylindrical can holder
+        with a slot for the photodiode at its base, and the tool itself which was a thin hooked
+        end-effector shaped specifically to slip under a soda-can tab and pull it back.
+      </p>
+ 
+      <p>
+        The arm has four servos: a base rotation joint, a shoulder, an elbow, and a wrist
+        that controls the tool angle. All four are driven by a PCA9685 16-channel PWM driver
+        over I²C from an Arduino Uno R3, which keeps the servo PWM signal off the Arduino's
+        own timers and lets all four servos hold position cleanly at the same time.
+      </p>
+    </section>
+ 
+    <!-- HARDWARE / ELECTRONICS -->
+    <section>
+      <h2>Electronics</h2>
+ 
+      <img class="project-figure" src="../assets/projects/can-opener/schematic.png" alt="Wiring diagram showing Arduino, PCA9685 servo driver, four servos, photodiode and indicator LED" />
+      <p class="figure-caption">Wiring overview: Arduino drives the PCA9685 over I²C, which drives all four servos. Photodiode and indicator LED are wired directly to the Arduino.</p>
+ 
+      <p>
+        The Arduino reads the photodiode through analog input A0. The PCA9685 sits on the I²C
+        bus and drives the four servos from a separate 5 V supply, so the Arduino's regulator
+        isn't trying to source servo current. An indicator LED on a digital pin lights up when
+        the photodiode reading drops below the threshold, i.e., when a can has been placed,
+        as visual feedback that the system has detected the can.
+      </p>
+    </section>
+ 
+    <!-- MOTION PROGRAMMING -->
+    <section>
+      <h2>Motion Programming</h2>
+ 
+      <p><strong>Per-servo calibration.</strong></p>
+      <p>
+        Before anything else, I worked out the PWM pulse range for each of the four servos
+        against the physical range of motion of its joint. Each servo gets its own min and
+        max pulse value (e.g., 105–495, 140–510, 150–525, 100–500) that maps to the joint's
+        usable 0–180° range. Without that calibration, sending the same angle command to two
+        different joints can put them in very different positions because servos vary in
+        their physical zero and travel.
+      </p>
+ 
+      <p><strong>The opening sequence.</strong></p>
+      <p>
+        Opening a tab is a small choreography of five steps rather than a single motion:
+      </p>
+      <ul>
+        <li><strong>Reach to the tab.</strong> Move to a starting position above the holder.</li>
+        <li><strong>Hook.</strong> Drop the tool tip in under the lip of the tab.</li>
+        <li><strong>Lift and pull back.</strong> The actual "open the can" motion: rotate the wrist and elbow together to lever the tab up.</li>
+        <li><strong>Unhook.</strong> Slip the tool out from under the tab cleanly so it doesn't catch on the way out.</li>
+        <li><strong>Return to home.</strong> Back to the starting pose, ready for the next can.</li>
+      </ul>
+ 
+      <p>
+        Each step is a sequence of <code>setServoAngle()</code> calls with short delays
+        between them. The trickiest parts, hooking and pulling back, use small per-iteration
+        increments to multiple joints in a loop, so the motion is smooth rather than jerky.
+        Several of these values were tuned by trial and error against an actual can: try a
+        sequence, watch what fails, adjust the angle or the delay, try again.
+      </p>
+ 
+      <p><strong>Photodiode trigger.</strong></p>
+      <p>
+        The opening sequence is gated on a light-level reading from the photodiode at the
+        bottom of the can holder. With no can present, ambient light reaches the photodiode
+        and the reading sits above the threshold. When a can is dropped in, the photodiode
+        gets covered, the reading drops below threshold, and the sequence runs. This was
+        deliberately a low-tech way of solving "did the user put a can in?" without needing
+        a button.
+      </p>
+    </section>
+ 
+    <!-- CAD -->
+    <section>
+      <h2>Mechanical Design</h2>
+      <p>
+        Every plastic part on the robot, the base, arm segments, can holder, and tool, was modeled
+        in CAD and printed iteratively. Most pieces went through two or three revisions: a
+        first print would reveal that a servo horn didn't fit, that a tolerance was too tight
+        for the print to actually snap together, or that the tool tip wasn't quite the right
+        profile to slip under a tab. Each revision tightened the fit until the assembly worked
+        cleanly.
+      </p>
+ 
+      <div class="media-row">
+        <img class="project-figure" src="../assets/projects/can-opener/cad-arm.png" alt="CAD render of one of the arm segments" />
+        <img class="project-figure" src="../assets/projects/can-opener/cad-tool.png" alt="CAD render of the can opener tool" />
+      </div>
+      <p class="figure-caption">CAD models of the arm segment (left) and the tab-hooking tool (right)</p>
+    </section>
+ 
+    <!-- TECHNOLOGIES -->
+    <section>
+      <h2>Technologies Used</h2>
+      <div class="tech-grid">
+        <span class="tech-badge primary">Arduino / C++</span>
+        <span class="tech-badge primary">PCA9685 (I²C PWM)</span>
+        <span class="tech-badge primary">CAD &amp; 3D Printing</span>
+        <span class="tech-badge primary">Servo Calibration</span>
+        <span class="tech-badge primary">Sequenced Motion Control</span>
+        <span class="tech-badge">MG996R Servos</span>
+        <span class="tech-badge">Photodiode / Analog Sensing</span>
+        <span class="tech-badge">Iterative Hardware Prototyping</span>
+      </div>
+    </section>
+ 
+    <!-- WHAT I LEARNED -->
+    <section>
+      <h2>What I Learned</h2>
+      <ul>
+        <li>How much of robotics work is mechanical iteration, not code. The biggest
+        unblocker on this project wasn't a clever algorithm, it was reprinting the tool
+        with a slightly different tip profile so it could actually catch a tab.</li>
+        <li>Calibration is where the engineering happens. Mapping each servo's actual usable
+        range to its angle inputs was unglamorous work but completely necessary, without it
+        none of the motion sequencing would have produced repeatable results.</li>
+        <li>"Preset motion" doesn't mean simple motion. Choreographing five distinct phases
+        with the right joints moving at the right times, smoothly enough not to snag, was
+        more delicate than I expected when we started the project.</li>
+        <li>Cheap sensors can solve real problems. The photodiode trigger is about as basic
+        as it gets, but it gave the user a "place can, robot opens it" experience with no
+        button-press, no UI, and no extra hardware cost.</li>
+      </ul>
+    </section>
+ 
+  </div>
+ 
+  <footer class="site-footer">
+    <div class="container">
+      <p>Email: earllouisjr1118@gmail.com</p>
+      <p>
+        <a href="https://github.com/earllouisjr">GitHub</a> |
+        <a href="https://www.linkedin.com/in/earl-louis-him/">LinkedIn</a>
+      </p>
+    </div>
+  </footer>
+ 
+</body>
+</html>
