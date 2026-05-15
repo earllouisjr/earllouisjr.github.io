@@ -1,66 +1,430 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wavefront Path Planning Robot</title>
-
-    <link rel="stylesheet" href="../style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wavefront Path Planning Robot | Earl Louis Jr</title>
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    .project-page {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 60px 32px 80px;
+    }
+ 
+    .project-page h1 {
+      font-size: 2.2rem;
+      margin-bottom: 8px;
+    }
+ 
+    .project-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 16px 0 40px;
+    }
+ 
+    .meta-tag {
+      font-size: 12px;
+      padding: 4px 12px;
+      border-radius: 100px;
+      border: 1px solid #333;
+      color: #aaa;
+      font-family: monospace;
+      letter-spacing: 0.03em;
+    }
+ 
+    .project-page section {
+      margin-bottom: 52px;
+    }
+ 
+    .project-page h2 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #f0f0f0;
+      margin-top: 0;
+      margin-bottom: 14px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #222;
+    }
+ 
+    .project-page p {
+      color: #bbb;
+      line-height: 1.75;
+      margin-bottom: 14px;
+    }
+ 
+    .project-page ul {
+      color: #bbb;
+      line-height: 1.75;
+      padding-left: 20px;
+      margin-bottom: 14px;
+    }
+ 
+    .project-page ul li {
+      margin-bottom: 6px;
+    }
+ 
+    .highlight-box {
+      background-color: #161f2e;
+      border-left: 3px solid #66aaff;
+      border-radius: 0 8px 8px 0;
+      padding: 16px 20px;
+      margin: 20px 0;
+    }
+ 
+    .highlight-box p {
+      margin: 0;
+      color: #99c4ff;
+      font-size: 15px;
+    }
+ 
+    .tech-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+    }
+ 
+    .tech-badge {
+      font-size: 12px;
+      font-family: monospace;
+      padding: 5px 12px;
+      background-color: #1a1a1a;
+      border: 1px solid #2a2a2a;
+      border-radius: 6px;
+      color: #ccc;
+    }
+ 
+    .tech-badge.primary {
+      border-color: #1e3a5f;
+      color: #66aaff;
+      background-color: #0d1f33;
+    }
+ 
+    .project-figure {
+      width: 100%;
+      border-radius: 10px;
+      display: block;
+      margin-bottom: 16px;
+    }
+ 
+    .figure-caption {
+      font-size: 12px;
+      color: #777;
+      text-align: center;
+      margin-top: -8px;
+      margin-bottom: 20px;
+    }
+ 
+    .media-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+ 
+    .role-note {
+      background-color: #1a1a1a;
+      border: 1px solid #2a2a2a;
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin-top: 16px;
+      font-size: 13px;
+      color: #888;
+    }
+ 
+    .role-note strong {
+      color: #ccc;
+    }
+ 
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #66aaff;
+      text-decoration: none;
+      font-size: 14px;
+      margin-bottom: 32px;
+    }
+ 
+    .back-link:hover {
+      text-decoration: underline;
+    }
+ 
+    @media (max-width: 600px) {
+      .media-row { grid-template-columns: 1fr; }
+      .project-page { padding: 40px 20px 60px; }
+    }
+  </style>
 </head>
-
+ 
 <body>
-
-    <nav>
+ 
+  <header class="site-header">
+    <div class="container">
+      <nav class="navbar">
         <a href="../index.html">Home</a>
         <a href="index.html">Projects</a>
-    </nav>
-
-    <div class="container">
-
-        <h1>Robot Motion Planning: Wavefront Path Planning Robot</h1>
-
-        <!-- OVERVIEW -->
-        <section>
-            <h2>Overview</h2>
-        </section>
-
-        <!-- PROBLEM STATEMENT -->
-        <section>
-            <h2>Problem Statement</h2>
-        </section>
-
-        <!-- SYSTEM ARCHITECTURE -->
-        <section>
-            <h2>System Architecture</h2>
-        </section>
-
-        <!-- IMPLEMENTATION DETAILS -->
-        <section>
-            <h2>Implementation Details</h2>
-        </section>
-
-        <!-- RESULTS -->
-        <section>
-            <h2>Results</h2>
-        </section>
-
-        <!-- TECHNOLOGIES USED -->
-        <section>
-            <h2>Technologies Used</h2>
-        </section>
-
-        <!-- LEARNINGS -->
-        <section>
-            <h2>What I Learned</h2>
-        </section>
-
-        <!-- PLACEHOLDERS FOR MEDIA -->
-        <section>
-            <h2>Diagrams and Media</h2>
-            <p>Insert block diagrams, circuit schematics, photos, and system visuals here.</p>
-        </section>
-
+        <a href="../experience/index.html">Experience</a>
+        <a href="../resume.html">Resume</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
     </div>
+  </header>
+ 
+  <div class="project-page">
+ 
+    <a class="back-link" href="index.html">← All Projects</a>
+ 
+    <h1>Wavefront Path Planning Robot</h1>
+    <p style="color:#888; margin-top:0; margin-bottom:0; font-size:15px;">ECE 3162 Robotics &nbsp;·&nbsp; UConn, Fall 2025</p>
+ 
+    <div class="project-meta">
+      <span class="meta-tag">OpenCV</span>
+      <span class="meta-tag">Wavefront / BFS</span>
+      <span class="meta-tag">Catmull-Rom Splines</span>
+      <span class="meta-tag">Python</span>
+      <span class="meta-tag">Arduino</span>
+      <span class="meta-tag">Romi 32U4</span>
+    </div>
+ 
+    <!-- OVERVIEW -->
+    <section>
+      <h2>Overview</h2>
+      <p>
+        A wheeled robot that navigates an obstacle field to a clicked goal point, using only an overhead
+        webcam for localization. The webcam feed runs through a perception and planning pipeline on a laptop:
+        color tracking identifies the robot's position and heading, green-tagged obstacles are turned into
+        an inflated occupancy grid, and a wavefront planner produces a smoothed path that the robot follows
+        under heading-based control. The robot replans continuously, so obstacles can be moved during a run
+        and the path updates within roughly a second.
+      </p>
+ 
+      <div class="role-note">
+        <strong>My role:</strong> A teammate and I wrote the software for perception, occupancy grid
+        construction, the wavefront planner, path smoothing, the motion-control loop, and the Arduino
+        receiver on the Romi. 
+      </div>
+    </section>
+ 
+    <!-- DEMO -->
+    <section>
+      <h2>Demo</h2>
+      <p>
+        The laptop shows the overhead view with overlays for the inflated obstacles (blue), the planned
+        path (green), and the robot's detected heading. After a click sets the goal, the robot turns to
+        face the next waypoint and drives forward, replanning as it goes.
+      </p>
+      <video controls preload="metadata" poster="../assets/projects/wavefront-robot/demo-poster.jpg" style="width:100%; border-radius:10px; background:#000; margin-top:8px;">
+        <source src="../assets/projects/wavefront-robot/demo.mp4" type="video/mp4">
+        Your browser does not support embedded video.
+      </video>
+    </section>
+ 
+    <!-- OBJECTIVE -->
+    <section>
+      <h2>Objective</h2>
+      <p>
+        The course assignment was to design and build an autonomous robot demonstrating a path-planning
+        algorithm of our choice. We chose an off-board, vision-based approach: rather than putting sensors
+        on the robot, we'd treat the robot as a "dumb" actuator and put all the perception and planning
+        on a laptop with an overhead camera view.
+      </p>
+      <p>
+        That setup mirrors how a lot of real warehouse and factory-floor robotics works, a central system
+        sees the whole environment, plans for individual robots, and sends them commands. It's cheaper per
+        robot, easier to coordinate multiple robots, and a useful method for testing planning algorithms
+        before deploying them onto more expensive platforms.
+      </p>
+    </section>
+ 
+    <!-- SYSTEM ARCHITECTURE -->
+    <section>
+      <h2>System Architecture</h2>
+      <p>
+        The webcam streams to the laptop, which runs the perception and planning loop in Python with
+        OpenCV. The laptop sends single-character motion commands to the Romi 32U4 over USB serial. An
+        Arduino sketch on the Romi maps each character to a motor-speed pair.
+      </p>
+ 
+      <img class="project-figure" src="../assets/projects/wavefront-robot/architecture.png" alt="System architecture: overhead camera feeds laptop, laptop sends commands to Romi robot, robot drives in environment with obstacles" />
+      <p class="figure-caption">System architecture: overhead camera → laptop perception/planning → Romi over serial</p>
+ 
+      <p>
+        Each frame, the laptop runs the full pipeline:
+      </p>
+      <ul>
+        <li><strong>Perception:</strong> HSV color masking finds red (robot front), blue (robot back), and green (obstacles). Robot position is the midpoint of the two markers; heading is the atan2 of the vector between them.</li>
+        <li><strong>Occupancy grid:</strong> the obstacle mask is downsampled by 5× into a 2D grid, then inflated by the robot radius plus extra padding around detected corners.</li>
+        <li><strong>Planning:</strong> a wavefront BFS from the goal cell labels every reachable cell with its distance to goal and gradient descent from the robot's cell extracts a path.</li>
+        <li><strong>Smoothing:</strong> the raw grid path is line-of-sight shortcut, then run through a Catmull-Rom spline to produce a path the robot can actually follow without abrupt heading changes.</li>
+        <li><strong>Control:</strong> a pure-heading controller picks the next waypoint along the smoothed path, computes the angle error, and issues forward / turn / back / stop commands.</li>
+      </ul>
+    </section>
+ 
+    <!-- IMPLEMENTATION -->
+    <section>
+      <h2>Implementation Details</h2>
+ 
+      <p><strong>Color tracking and heading.</strong></p>
+      <p>
+        The frame is converted to HSV, and three masks are extracted: red for the front of the robot, blue
+        for the back, and green for obstacles. For each color, the largest contour above an area threshold
+        is taken and its centroid computed from image moments. Robot position is the midpoint of the front
+        and back centroids and heading comes from atan2 of the front-minus-back vector. Using two markers
+        instead of one means heading is read directly from the image without needing the robot to move.
+      </p>
+        
+      <img class="project-figure" src="../assets/projects/wavefront-robot/robot-detection.png" alt="Overhead camera view (left) and corresponding HSV mask (right) showing detected robot markers" />
+      <p class="figure-caption">Overhead frame (left) and HSV mask isolating the robot markers (right)</p>
+ 
+      <p><strong>Inflated occupancy grid.</strong></p>
+      <p>
+        The green obstacle mask is resized to a coarser grid (5× downsample) for planning speed. The grid
+        is then inflated using an elliptical structuring element sized to the robot's radius, so any cell
+        that would put the robot in collision is marked blocked. On top of that, it runs Harris corner detection
+        on the raw obstacle grid and apply an extra round of inflation around detected corners. This was a
+        response to a failure mode during testing: the robot kept clipping concave corners because the
+        base inflation was uniform. Extra padding at corners specifically solved that.
+      </p>
+        
+      <img class="project-figure" src="../assets/projects/wavefront-robot/obstacle-detection.png" alt="Camera view of green obstacles (left) and corresponding obstacle mask before corner inflation (right)" />
+      <p class="figure-caption">Camera view of obstacles (left) and the obstacle mask before corner inflation (right)</p>
+ 
+      <p><strong>Wavefront planner.</strong></p>
+      <p>
+        The planner is a breadth-first search expanding outward from the goal cell. Each reachable cell
+        gets labeled with its distance to goal in steps (8-connected, so diagonals are allowed). Once the
+        wavefront has filled the reachable space, a path is extracted by starting at the robot's cell and
+        repeatedly stepping to the neighbor with the lowest distance value: a discrete gradient descent
+        over the distance field. The planner runs roughly once per second, plus immediately on goal change
+        or when the previous path is invalidated.
+      </p>
+ 
+      <p><strong>Path smoothing.</strong></p>
+      <p>
+        The raw wavefront path is a sequence of grid-cell steps that zig-zags more than the robot needs to.
+        It runs through two passes: first a line-of-sight shortcutter that walks the path and drops
+        intermediate points whenever a straight line between two non-adjacent points doesn't cross an obstacle
+        cell, then a Catmull-Rom spline through the shortcut waypoints to produce a smooth curve. The result
+        is a path the robot can follow with mostly forward motion and small heading corrections, rather than
+        the stutter-stop turns of the raw grid path.
+      </p>
+ 
+      <p><strong>Motion control.</strong></p>
+      <p>
+        Each frame, the controller finds the closest waypoint on the smoothed path to the robot's current
+        position, then looks a few waypoints ahead as the target. It computes the angle from the robot to
+        the lookahead point, subtracts the robot's heading, and normalizes the error to [-180, 180]. If the
+        error is above a threshold the controller issues a rotate command (left or right); otherwise it
+        drives forward. Commands are single characters (F, L, R, B, S) sent over serial. The Arduino on the
+        Romi maps each character to a motor speed pair using the Romi32U4 library.
+      </p>
+ 
+      <p><strong>Stuck-recovery.</strong></p>
+      <p>
+        If the planner ever returns no path, usually because the robot has drifted close enough to an
+        inflated obstacle that its current cell counts as blocked, the controller enters a short backup
+        mode, drives in reverse for a fraction of a second, then forces a replan. This was added after
+        seeing the robot get stuck against inflated obstacle boundaries during testing.
+      </p>
+    </section>
+ 
+    <!-- RESULTS -->
+    <section>
+      <h2>Results</h2>
+      <p>
+        The final system reliably navigates the Romi from a starting position to a clicked goal through
+        a field of green-tagged obstacles. Obstacles can be picked up and moved while the robot is in
+        motion and the path updates on the next planning cycle. The backup-and-replan behavior recovers
+        the robot when it gets stuck, which was previously a hard failure.
+      </p>
+ 
+      <div class="highlight-box">
+        <p>The full pipeline of perception, occupancy grid construction, wavefront BFS, line-of-sight
+        shortcutting, Catmull-Rom smoothing, and heading-based control, runs in real time on a laptop
+        webcam feed and successfully drives the robot through cluttered environments with moving obstacles.</p>
+      </div>
+    </section>
+ 
+    <!-- SCOPE CHANGES -->
+    <section>
+      <h2>Scope Changes</h2>
+      <p>
+        Two features from the original proposal were dropped during the project:
+      </p>
+      <ul>
+        <li><strong>Moving target tracking.</strong> The proposal called for a target that the robot would chase
+        around the environment. We descoped this to a clicked goal point partway through as it kept the
+        interesting planning problem (path planning around obstacles) while removing complexity that was
+        going to eat development time without adding much beyond what continuous replanning already gave us.</li>
+        <li><strong>Wireless control.</strong> The proposal called for a Raspberry Pi onboard the robot receiving
+        commands over Wi-Fi. We couldn't get a reliable wireless link working in the time available, so the
+        final robot is tethered to the laptop over a micro-USB serial connection. The control protocol is
+        the same either way, so this is purely a connectivity issue rather than a software one.</li>
+      </ul>
+    </section>
 
+      
+    <!-- HARDWARE -->
+    <section>
+      <h2>Hardware</h2>
+      <p>
+        The Romi 32U4 platform with red and blue HSV markers attached to the front and back for overhead
+        tracking. The robot communicates with the laptop over a micro-USB tether.
+      </p>
+      <img class="project-figure" src="../assets/projects/wavefront-robot/robot.png" alt="Romi 32U4 robot with red front marker and blue back marker for color tracking" />
+      <p class="figure-caption">Romi 32U4 with front (red) and back (blue) HSV markers</p>
+    </section>
+     
+    <!-- TECHNOLOGIES -->
+    <section>
+      <h2>Technologies Used</h2>
+      <div class="tech-grid">
+        <span class="tech-badge primary">Python</span>
+        <span class="tech-badge primary">OpenCV</span>
+        <span class="tech-badge primary">NumPy</span>
+        <span class="tech-badge primary">Wavefront / BFS</span>
+        <span class="tech-badge primary">Catmull-Rom Splines</span>
+        <span class="tech-badge primary">Arduino / C++</span>
+        <span class="tech-badge">Romi 32U4</span>
+        <span class="tech-badge">HSV Color Tracking</span>
+        <span class="tech-badge">Harris Corners</span>
+        <span class="tech-badge">Morphological Dilation</span>
+        <span class="tech-badge">Serial Protocol Design</span>
+      </div>
+    </section>
+ 
+    <!-- WHAT I LEARNED -->
+    <section>
+      <h2>What I Learned</h2>
+      <ul>
+        <li>How a planning stack actually fits together end-to-end: perception feeds the occupancy grid, the
+        grid feeds the planner, the planner feeds the smoother, the smoother feeds the controller. Each
+        stage hides assumptions that hurt the next stage if you don't get them right.</li>
+        <li>Uniform inflation isn't enough. The corner-specific inflation came directly from watching the
+        robot fail at concave corners during testing. A lot of robotics work is iterating between "what
+        the algorithm says should work" and "what the robot actually does in the room."</li>
+        <li>Smoothing matters as much as planning. The raw wavefront path is correct but unfollowable, a
+        wheeled robot with discrete turn/drive commands can't actually track grid-step zig-zags. The
+        shortcutter and Catmull-Rom pass turned a working planner into a working robot.</li>
+        <li>Knowing when to descope. Moving-target tracking and wireless control were getting between us and 
+        a working demo. Holding on to the original spec out of stubbornness would have meant turning in a broken 
+        project.</li>
+      </ul>
+    </section>
+ 
+  </div>
+ 
+  <footer class="site-footer">
+    <div class="container">
+      <p>Email: earllouisjr1118@gmail.com</p>
+      <p>
+        <a href="https://github.com/earllouisjr">GitHub</a> |
+        <a href="https://www.linkedin.com/in/earl-louis-him/">LinkedIn</a>
+      </p>
+    </div>
+  </footer>
+ 
 </body>
 </html>
