@@ -5,6 +5,89 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Earl Louis Jr | Contact</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .contact-page {
+      max-width: 720px;
+      margin: 0 auto;
+      padding: 80px 32px;
+    }
+ 
+    .contact-page h1 {
+      margin-bottom: 12px;
+    }
+ 
+    .contact-page .lead {
+      font-size: 16px;
+      color: #bbb;
+      line-height: 1.7;
+      margin-bottom: 40px;
+    }
+ 
+    .contact-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 40px 0;
+    }
+ 
+    .contact-list li {
+      display: flex;
+      align-items: baseline;
+      gap: 16px;
+      padding: 14px 0;
+      border-bottom: 1px solid #222;
+    }
+ 
+    .contact-list li:last-child {
+      border-bottom: none;
+    }
+ 
+    .contact-label {
+      font-size: 13px;
+      color: #888;
+      font-family: monospace;
+      letter-spacing: 0.03em;
+      width: 110px;
+      flex-shrink: 0;
+    }
+ 
+    .contact-value {
+      color: #e0e0e0;
+      font-size: 15px;
+    }
+ 
+    .contact-value a {
+      color: #66aaff;
+      text-decoration: none;
+    }
+ 
+    .contact-value a:hover {
+      text-decoration: underline;
+    }
+ 
+    .open-to {
+      background-color: #161f2e;
+      border-left: 3px solid #66aaff;
+      border-radius: 0 8px 8px 0;
+      padding: 18px 22px;
+      margin-top: 8px;
+    }
+ 
+    .open-to h2 {
+      font-size: 14px;
+      font-weight: 600;
+      color: #99c4ff;
+      margin: 0 0 8px 0;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+ 
+    .open-to p {
+      margin: 0;
+      color: #bbb;
+      font-size: 15px;
+      line-height: 1.7;
+    }
+  </style>
 </head>
  
 <body>
@@ -22,9 +105,43 @@
     </div>
   </header>
  
+  <div class="contact-page">
  
+    <h1>Contact</h1>
+    <p class="lead">
+      The easiest way to reach me is email. I'm also active on LinkedIn and GitHub -
+      links below.
+    </p>
  
-
+    <ul class="contact-list">
+      <li>
+        <span class="contact-label">Email</span>
+        <span class="contact-value"><a href="mailto:earllouisjr1118@gmail.com">earllouisjr1118@gmail.com</a></span>
+      </li>
+      <li>
+        <span class="contact-label">LinkedIn</span>
+        <span class="contact-value"><a href="https://www.linkedin.com/in/earl-louis-him/" target="_blank" rel="noopener">linkedin.com/in/earl-louis-him</a></span>
+      </li>
+      <li>
+        <span class="contact-label">GitHub</span>
+        <span class="contact-value"><a href="https://github.com/earllouisjr" target="_blank" rel="noopener">github.com/earllouisjr</a></span>
+      </li>
+      <li>
+        <span class="contact-label">Based in</span>
+        <span class="contact-value">Connecticut, USA</span>
+      </li>
+    </ul>
+ 
+    <div class="open-to">
+      <h2>Currently Open To</h2>
+      <p>
+        Full-time opportunities in controls and automation, robotics, and live event /
+        entertainment engineering. Open to roles in Connecticut and the broader Northeast,
+        as well as remote-friendly positions.
+      </p>
+    </div>
+ 
+  </div>
  
   <!-- FOOTER -->
   <footer class="site-footer">
