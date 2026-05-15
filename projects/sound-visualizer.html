@@ -1,66 +1,435 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sound Intesity Visualizer</title>
-
-    <link rel="stylesheet" href="../style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sound Intensity Visualizer | Earl Louis Jr</title>
+  <link rel="stylesheet" href="../style.css" />
+  <style>
+    .project-page {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 60px 32px 80px;
+    }
+ 
+    .project-page h1 {
+      font-size: 2.2rem;
+      margin-bottom: 8px;
+    }
+ 
+    .project-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 16px 0 40px;
+    }
+ 
+    .meta-tag {
+      font-size: 12px;
+      padding: 4px 12px;
+      border-radius: 100px;
+      border: 1px solid #333;
+      color: #aaa;
+      font-family: monospace;
+      letter-spacing: 0.03em;
+    }
+ 
+    .project-page section {
+      margin-bottom: 52px;
+    }
+ 
+    .project-page h2 {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: #f0f0f0;
+      margin-top: 0;
+      margin-bottom: 14px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #222;
+    }
+ 
+    .project-page p {
+      color: #bbb;
+      line-height: 1.75;
+      margin-bottom: 14px;
+    }
+ 
+    .project-page ul {
+      color: #bbb;
+      line-height: 1.75;
+      padding-left: 20px;
+      margin-bottom: 14px;
+    }
+ 
+    .project-page ul li {
+      margin-bottom: 6px;
+    }
+ 
+    .highlight-box {
+      background-color: #161f2e;
+      border-left: 3px solid #66aaff;
+      border-radius: 0 8px 8px 0;
+      padding: 16px 20px;
+      margin: 20px 0;
+    }
+ 
+    .highlight-box p {
+      margin: 0;
+      color: #99c4ff;
+      font-size: 15px;
+    }
+ 
+    .tech-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 8px;
+    }
+ 
+    .tech-badge {
+      font-size: 12px;
+      font-family: monospace;
+      padding: 5px 12px;
+      background-color: #1a1a1a;
+      border: 1px solid #2a2a2a;
+      border-radius: 6px;
+      color: #ccc;
+    }
+ 
+    .tech-badge.primary {
+      border-color: #1e3a5f;
+      color: #66aaff;
+      background-color: #0d1f33;
+    }
+ 
+    .project-figure {
+      width: 100%;
+      border-radius: 10px;
+      display: block;
+      margin-bottom: 16px;
+    }
+ 
+    .figure-caption {
+      font-size: 12px;
+      color: #777;
+      text-align: center;
+      margin-top: -8px;
+      margin-bottom: 20px;
+    }
+ 
+    .media-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+ 
+    .role-note {
+      background-color: #1a1a1a;
+      border: 1px solid #2a2a2a;
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin-top: 16px;
+      font-size: 13px;
+      color: #888;
+    }
+ 
+    .role-note strong {
+      color: #ccc;
+    }
+ 
+    .code-block {
+      background-color: #0d0d0d;
+      border: 1px solid #1f1f1f;
+      border-radius: 8px;
+      padding: 16px 18px;
+      margin: 16px 0;
+      overflow-x: auto;
+      font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+      font-size: 12.5px;
+      line-height: 1.6;
+      color: #c8c8c8;
+    }
+ 
+    .code-block .c-comment { color: #6a8a6a; }
+    .code-block .c-keyword { color: #b48ad6; }
+    .code-block .c-string { color: #cfa66b; }
+ 
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #66aaff;
+      text-decoration: none;
+      font-size: 14px;
+      margin-bottom: 32px;
+    }
+ 
+    .back-link:hover {
+      text-decoration: underline;
+    }
+ 
+    @media (max-width: 600px) {
+      .media-row { grid-template-columns: 1fr; }
+      .project-page { padding: 40px 20px 60px; }
+    }
+  </style>
 </head>
-
+ 
 <body>
-
-    <nav>
+ 
+  <header class="site-header">
+    <div class="container">
+      <nav class="navbar">
         <a href="../index.html">Home</a>
         <a href="index.html">Projects</a>
-    </nav>
-
-    <div class="container">
-
-        <h1>Microprocessor Applications Laboratory: Sound Intesity Visualizer</h1>
-
-        <!-- OVERVIEW -->
-        <section>
-            <h2>Overview</h2>
-        </section>
-
-        <!-- PROBLEM STATEMENT -->
-        <section>
-            <h2>Problem Statement</h2>
-        </section>
-
-        <!-- SYSTEM ARCHITECTURE -->
-        <section>
-            <h2>System Architecture</h2>
-        </section>
-
-        <!-- IMPLEMENTATION DETAILS -->
-        <section>
-            <h2>Implementation Details</h2>
-        </section>
-
-        <!-- RESULTS -->
-        <section>
-            <h2>Results</h2>
-        </section>
-
-        <!-- TECHNOLOGIES USED -->
-        <section>
-            <h2>Technologies Used</h2>
-        </section>
-
-        <!-- LEARNINGS -->
-        <section>
-            <h2>What I Learned</h2>
-        </section>
-
-        <!-- PLACEHOLDERS FOR MEDIA -->
-        <section>
-            <h2>Diagrams and Media</h2>
-            <p>Insert block diagrams, circuit schematics, photos, and system visuals here.</p>
-        </section>
-
+        <a href="../experience/index.html">Experience</a>
+        <a href="../resume.html">Resume</a>
+        <a href="../contact.html">Contact</a>
+      </nav>
     </div>
-
+  </header>
+ 
+  <div class="project-page">
+ 
+    <a class="back-link" href="index.html">← All Projects</a>
+ 
+    <h1>Sound Intensity Visualizer</h1>
+    <p style="color:#888; margin-top:0; margin-bottom:0; font-size:15px;">ECE 3411 Microprocessor Applications Laboratory &nbsp;·&nbsp; UConn, Fall 2025</p>
+ 
+    <div class="project-meta">
+      <span class="meta-tag">AVR / Bare-Metal C</span>
+      <span class="meta-tag">I²C</span>
+      <span class="meta-tag">SSD1306 OLED</span>
+      <span class="meta-tag">ADC / RMS</span>
+      <span class="meta-tag">Interrupts</span>
+      <span class="meta-tag">Embedded Systems</span>
+    </div>
+ 
+    <!-- OVERVIEW -->
+    <section>
+      <h2>Overview</h2>
+      <p>
+        A microcontroller-based system that samples sound from an electret microphone and visualizes
+        the intensity on two displays in real time: an OLED showing the current sound level in decibels
+        plus the active mode, and a 32×8 LED dot matrix showing the level graphically. The system has
+        three modes: bar (current level as a bar graph), wave (recent levels scrolling as a waveform),
+        and replay (waveforms recorded to EEPROM and played back). Modes are switched with a pushbutton.
+      </p>
+ 
+      <div class="role-note">
+        <strong>My role:</strong> I built the OLED display subsystem, a bare-metal SSD1306
+        driver over I²C with no external library, a 1024-byte framebuffer, a 6×8 ASCII font table, and
+        text-rendering functions used by the rest of the system to show the dB readout, the active mode,
+        and recording status. My teammate handled the microphone, ADC sampling, RMS computation, and
+        the LED dot matrix output. Buttons, mode switching, and overall system integration were shared.
+      </p>
+    </section>
+ 
+    <!-- DEMO -->
+    <section>
+      <h2>Demo</h2>
+      <p>
+        Short walkthrough of the three visualization modes. The OLED shows the live dB reading and the
+        active mode label while the LED matrix shows the corresponding graphical output. This demo was 
+        recorded informally during our final demo to the professor.
+      </p>
+      <video controls preload="metadata" poster="../assets/projects/sound-visualizer/demo-poster.jpg" style="width:100%; border-radius:10px; background:#000; margin-top:8px;">
+        <source src="../assets/projects/sound-visualizer/demo.mp4" type="video/mp4">
+        Your browser does not support embedded video.
+      </video>
+    </section>
+ 
+    <!-- ASSIGNMENT -->
+    <section>
+      <h2>Assignment</h2>
+      <p>
+        The course project gave each team free rein to build something on the AVR microcontroller platform
+        we'd been using all semester, as long as it integrated several of the peripherals we'd covered
+        (ADC, timers, I²C, SPI, interrupts, EEPROM). We chose a sound visualizer because it touched
+        most of them naturally: analog input through the ADC, a real-time processing loop on timer
+        interrupts, two displays on two different serial buses (I²C and SPI), button input, and EEPROM
+        for the record-and-replay feature.
+      </p>
+    </section>
+ 
+    <!-- SYSTEM ARCHITECTURE -->
+    <section>
+      <h2>System Architecture</h2>
+      <p>
+        The microcontroller reads the microphone through its ADC on a timer-driven schedule. Samples
+        are accumulated into an RMS value, low-pass filtered, and sent to two outputs depending
+        on the active mode. The OLED shows the numeric dB readout and mode label over I²C and the LED
+        dot matrix shows the corresponding graphical visualization over SPI. Two buttons handle mode
+        cycling and starting a recording.
+      </p>
+ 
+      <img class="project-figure" src="../assets/projects/sound-visualizer/schematic.png" alt="Block diagram showing microcontroller peripherals connected to microphone, OLED, LED matrix, buttons, and EEPROM" />
+      <p class="figure-caption">Block diagram of the system: ADC reads the microphone, the MCU drives the OLED over I²C and the LED matrix over SPI, with buttons and EEPROM as additional peripherals</p>
+ 
+      <img class="project-figure" src="../assets/projects/sound-visualizer/software-flow.png" alt="Software flow diagram showing power-on, button input, ADC sampling and RMS computation, and the three display modes" />
+      <p class="figure-caption">Software flow: sample → RMS + filter → branch on mode (bar, wave, replay)</p>
+    </section>
+ 
+    <!-- OLED DRIVER -->
+    <section>
+      <h2>OLED Display Driver</h2>
+      <p>
+        The OLED is a 128×64 SSD1306 panel on the I²C bus. There are off-the-shelf libraries
+        for this part, but the assignment was about working close to the hardware, so I wrote the driver
+        from scratch against the SSD1306 datasheet. The driver sits on top of the AVR's TWI1 peripheral
+        registers directly.
+      </p>
+ 
+      <p><strong>Initialization sequence.</strong></p>
+      <p>
+        The SSD1306 requires a specific 15-command setup before it'll display anything: turning on the
+        charge pump, setting the multiplex ratio for the 64-pixel height, picking horizontal addressing
+        mode, setting segment and COM scan directions so the image isn't mirrored or flipped, and so on.
+        Each value comes out of the datasheet and means something specific. I wrote them out with inline
+        comments so the intent of each byte is obvious:
+      </p>
+ 
+<div class="code-block">
+<span class="c-keyword">const uint8_t</span> init_seq[] = {
+    0xAE,            <span class="c-comment">// display OFF</span>
+    0xD5, 0x80,      <span class="c-comment">// clock divide / oscillator freq (default)</span>
+    0xA8, 0x3F,      <span class="c-comment">// multiplex ratio = 64 (128x64 panel)</span>
+    0xD3, 0x00,      <span class="c-comment">// display offset = 0</span>
+    0x40,            <span class="c-comment">// start line = 0</span>
+    0x8D, 0x14,      <span class="c-comment">// enable internal charge pump</span>
+    0x20, 0x00,      <span class="c-comment">// horizontal addressing mode</span>
+    0xA1,            <span class="c-comment">// segment remap (col 127 -> SEG0)</span>
+    0xC8,            <span class="c-comment">// COM scan direction (flipped)</span>
+    0xDA, 0x12,      <span class="c-comment">// COM pin hardware config (alt)</span>
+    0x81, 0x7F,      <span class="c-comment">// contrast = medium</span>
+    0xD9, 0xF1,      <span class="c-comment">// pre-charge period</span>
+    0xDB, 0x40,      <span class="c-comment">// VCOMH deselect = ~0.77 * Vcc</span>
+    0xA4,            <span class="c-comment">// resume from RAM (normal display)</span>
+    0xA6             <span class="c-comment">// non-inverted</span>
+};
+</div>
+ 
+      <p><strong>Framebuffer and page-by-page push.</strong></p>
+      <p>
+        The SSD1306 organizes its display memory in 8 horizontal "pages" of 128 columns, where each page
+        is one byte tall (8 vertical pixels). I keep a 1024-byte framebuffer in RAM matching that layout,
+        do all drawing into RAM, then push the framebuffer to the panel one page at a time over I²C.
+        This means individual character writes are cheap (just memory writes) and the cost of going
+        to the bus is paid once per refresh instead of once per pixel.
+      </p>
+ 
+      <p><strong>Font rendering.</strong></p>
+      <p>
+        I used a 6×8 monospace font table covering ASCII 0x20–0x7F: each character is six column-bytes,
+        with the first five carrying the glyph and the sixth always zero for spacing. On top of that
+        are cursor / putc / print functions that take a string, look up each character in the table, and
+        copy its six bytes into the framebuffer at the cursor position. At 6 px per character and 128 px
+        of width, that's 21 characters per row, and the 64-pixel height gives 8 rows of text, enough
+        for the dB readout, the mode label, and one or two status lines.
+      </p>
+    </section>
+ 
+    <!-- AUDIO PROCESSING -->
+    <section>
+      <h2>Audio Processing</h2>
+      <p>
+        On the input side, the microphone is sampled by the ADC at a fixed rate driven by a timer. Every
+        16 samples are accumulated and an RMS value is computed. That RMS value is then run through
+        a low-pass filter to produce the smoothed level used by the displays. Two filter constants are
+        used, a slower one for the bar mode (so the dB reading on the OLED doesn't twitch on every
+        sample) and a faster one for the wave mode (so the waveform on the LED matrix still has visible
+        shape). My teammate wrote this side of the system, the smoothed envelope it produces is what
+        the OLED prints and what the LED matrix renders.
+      </p>
+    </section>
+ 
+    <!-- INTEGRATION -->
+    <section>
+      <h2>Modes and Integration</h2>
+      <p>
+        The three modes share the same audio pipeline, what changes is how the smoothed level is
+        rendered:
+      </p>
+      <ul>
+        <li><strong>Bar:</strong> the current level drives a static bar graph on the LED matrix, scaled
+        0–7 rows tall. The OLED shows the live dB number and "Mode: Bar".</li>
+        <li><strong>Wave:</strong> a sliding history of recent levels is drawn across the 32 columns
+        of the matrix, producing a scrolling waveform. The OLED shows the live dB and "Mode: Wave".</li>
+        <li><strong>Replay:</strong> pressing the record button captures 1000 samples over five seconds
+        into EEPROM (buffered in large blocks to avoid latency). In replay mode, those samples are read
+        back and displayed as a waveform. The OLED shows "Mode: Replay" and "Playing saved audio".</li>
+      </ul>
+      <p>
+        One integration issue worth calling out: early on, the OLED was being refreshed too aggressively
+        and the time spent on I²C transactions was slowing down the ADC and LED matrix loops. The fix
+        was to gate the OLED update on a 250 ms timer rather than refreshing it every audio frame.
+      </p>
+    </section>
+ 
+    <!-- HARDWARE -->
+    <section>
+      <h2>Hardware</h2>
+      <img class="project-figure" src="../assets/projects/sound-visualizer/breadboard.jpg" alt="Full system on a breadboard showing microcontroller, microphone, OLED, LED matrix, and buttons" />
+      <p class="figure-caption">Full system: microcontroller, microphone, OLED, LED matrix, and buttons on one breadboard</p>
+ 
+      <div class="media-row">
+        <img class="project-figure" src="../assets/projects/sound-visualizer/oled-readout.jpg" alt="OLED showing live decibel reading and bar mode" />
+        <img class="project-figure" src="../assets/projects/sound-visualizer/led-matrix.jpg" alt="32 by 8 LED dot matrix lit up green showing sound level visualization" />
+      </div>
+      <p class="figure-caption">OLED with the live dB readout and mode label (left); 32×8 LED matrix showing the visualization (right)</p>
+    </section>
+ 
+    <!-- TECHNOLOGIES -->
+    <section>
+      <h2>Technologies Used</h2>
+      <div class="tech-grid">
+        <span class="tech-badge primary">AVR (bare-metal C)</span>
+        <span class="tech-badge primary">I²C (TWI registers)</span>
+        <span class="tech-badge primary">SSD1306</span>
+        <span class="tech-badge primary">ADC + RMS</span>
+        <span class="tech-badge primary">Timer / ISR programming</span>
+        <span class="tech-badge">MAX7219 LED matrix</span>
+        <span class="tech-badge">SPI</span>
+        <span class="tech-badge">Electret microphone</span>
+        <span class="tech-badge">EEPROM</span>
+        <span class="tech-badge">Button debounce</span>
+      </div>
+    </section>
+ 
+    <!-- WHAT I LEARNED -->
+    <section>
+      <h2>What I Learned</h2>
+      <ul>
+        <li>How to write a peripheral driver from a datasheet. The SSD1306 init sequence was the first
+        time I'd had to translate "the chip wants these specific bytes in this specific order for these
+        specific reasons" into working code, with no library to lean on.</li>
+        <li>Why a framebuffer is worth keeping in RAM. Drawing directly to the panel over I²C would
+        have been simpler to write but unusable in practice since each character would cost a full bus
+        transaction. Doing the drawing in RAM and batching pushes is the standard pattern, and now
+        I know why.</li>
+        <li>The cost of "small" operations in a real-time loop. The 250 ms OLED update gate came from
+        watching the LED matrix stutter when the OLED was refreshing too often. In a cooperative
+        single-threaded system, every long-running task you do is time you're not doing the other tasks,
+        and that shows up as visible glitches before it shows up as an obvious bug.</li>
+        <li>How to own one subsystem inside a small team. The clean boundary between "I write the
+        display side" and "my teammate writes the audio side" only worked because we agreed early on
+        what the interface between them looked like (a smoothed envelope value plus a mode flag).
+        That interface is what let us work in parallel.</li>
+      </ul>
+    </section>
+ 
+  </div>
+ 
+  <footer class="site-footer">
+    <div class="container">
+      <p>Email: earllouisjr1118@gmail.com</p>
+      <p>
+        <a href="https://github.com/earllouisjr">GitHub</a> |
+        <a href="https://www.linkedin.com/in/earl-louis-him/">LinkedIn</a>
+      </p>
+    </div>
+  </footer>
+ 
 </body>
 </html>
+ 
