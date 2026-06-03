@@ -281,7 +281,25 @@ a {
   margin: 6px 0;
   color: #aaa;
 }
- 
+
+/* META TAGS */
+.project-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+.meta-tag {
+  font-size: 12px;
+  padding: 4px 12px;
+  border-radius: 100px;
+  border: 1px solid #333;
+  color: #aaa;
+  font-family: monospace;
+  letter-spacing: 0.03em;
+}
+
 /*  RESPONSIVE  */
 @media (max-width: 900px) {
   .hero-inner {
